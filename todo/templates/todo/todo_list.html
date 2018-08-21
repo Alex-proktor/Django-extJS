@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Todo</title>
-</head>
-<body>
-<div>
-    <h1><a href="/">Список задач</a></h1>
-</div>
+{% extends 'todo/base.html' %}
 
-<div>
+{% block content %}
     {% for todo in todo_list %}
         <div>
             <p>Опубликовано: {{ todo.published_date }}</p>
@@ -17,5 +8,4 @@
             <p>{{ todo.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
