@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Post
 from .forms import TodoForm
@@ -15,6 +16,7 @@ def todo_detail(request, pk):
     return render(request, 'todo/todo_detail.html', {'todo': todo})
 
 
+@login_required
 def todo_new(request):
     if request.method == "POST":
         form = TodoForm(request.POST)
@@ -29,6 +31,7 @@ def todo_new(request):
     return render(request, 'todo/todo_edit.html', {'form': form})
 
 
+@login_required
 def todo_edit(request, pk):
     todo = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
