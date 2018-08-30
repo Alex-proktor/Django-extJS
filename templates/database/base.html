@@ -9,17 +9,17 @@
     <script src="{% static "extjs/build/ext-all.js" %}"></script>
     <script src="{% static "extjs/build/classic/theme-neptune/theme-neptune.js" %}"></script>
 
-    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/database.css' %}">
 </head>
 <body>
 <div>
-    <h1><a href="/">Список задач</a></h1>
+    <h1>Список обращений</h1>
 </div>
 
 <div>
     <div class="page-header">
         {% if user.is_authenticated %}
-            <a href="{% url 'todo_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{#            <a href="{% url 'database_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>#}
         {% else %}
             <p class="top-menu">Hello {{ user.username }}
                 <small>(<a href="{% url 'logout' %}">Log out</a>)</small>
