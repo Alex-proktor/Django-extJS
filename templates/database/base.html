@@ -8,6 +8,7 @@
           href="{% static "extjs/build/classic/theme-neptune/resources/theme-neptune-all.css" %}"/>
     <script src="{% static "extjs/build/ext-all.js" %}"></script>
     <script src="{% static "extjs/build/classic/theme-neptune/theme-neptune.js" %}"></script>
+    <script src="{% static "def.js" %}"></script>
 
     <link rel="stylesheet" href="{% static 'css/database.css' %}">
 </head>
@@ -19,7 +20,7 @@
 <div>
     <div class="page-header">
         {% if user.is_authenticated %}
-{#            <a href="{% url 'database_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>#}
+            {# <a href="{% url 'database_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>#}
         {% else %}
             <p class="top-menu">Hello {{ user.username }}
                 <small>(<a href="{% url 'logout' %}">Log out</a>)</small>
@@ -28,5 +29,18 @@
     </div>
     {% block content %}
     {% endblock %}
+</div>
+{#<script type="text/javascript">#}
+{#    Ext.onReady(function () {#}
+{#        var title = 'Мой заголовок';#}
+{#        var msg = 'Модель DOM готова...';#}
+{#        Ext.MessageBox.alert(title, msg);#}
+{#    });#}
+{#</script>#}
+{#<script>#}
+{#    window.onload = function () { //иначе плывет интерфейс#}
+{#        run_checkUsername();#}
+{#    }#}
+{#</script>#}
 </body>
 </html>
